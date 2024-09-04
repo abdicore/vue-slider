@@ -34,5 +34,16 @@ createApp({
         },
     ],
     }
+  },
+  computed: {
+    currentImage() {
+      return this.imagesList[this.activeIdex].image;
+    },
+    currentTitle() {
+      return this.imagesList[this.activeIdex].title;
+    },
+    currentText() {
+      return this.imagesList[this.activeIdex].text;
+    }
   }
 }).mount('#app')
