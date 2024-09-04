@@ -45,14 +45,20 @@ createApp({
       return this.imagesList[this.activeIndex].text;
     }
   },
-  methods:{
-    prevImage: function() {
-      this.activeIndex--
+  methods: {
+    prevImage() {
+      if (this.activeIndex === 0) {
+        this.activeIndex = this.imagesList.length - 1;
+      } else {
+        this.activeIndex--;
+      }
     },
-   
-    nextImage: function() {
-      this.activeIndex++
+    nextImage() {
+      if (this.activeIndex === this.imagesList.length - 1) {
+        this.activeIndex = 0;
+      } else {
+        this.activeIndex++;
+      }
     }
-
   }
-}).mount('#app')  
+}).mount('#app')
