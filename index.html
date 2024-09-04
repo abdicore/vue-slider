@@ -33,14 +33,13 @@
             </div>
         </header>
         <main class="container">
-            <button class="btn btn-warning">Previus image</button>
-
+            <button class="btn btn-warning" @click="prevImage()">Previus image</button>
             <div class="card" style="width: 18rem;">
                 <img :src="currentImage" class="card-img-top" alt="...">
                 <h2>{{ currentTitle }}</h2>
                 <h6>{{ currentText }}</p>
             </div>
-            <button class="btn btn-primary">Next image</button>
+            <button class="btn btn-primary"@click='nextImage()'>Next image</button>
 
         </main>
 

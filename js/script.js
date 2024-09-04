@@ -4,8 +4,7 @@ createApp({
   data() {
     return {
       message: 'Vue Slider',
-      activeIdex: 0,
-      image: '01.webp',  
+      activeIndex: 0,
       imagesList: [
         {
             image: 'img/01.webp',
@@ -14,7 +13,7 @@ createApp({
         },
         {
             image: 'img/02.webp',
-            title: 'Ratchet & Clank: Rift Apart',
+            title: 'Ratchet & Clank:w Rift Apart',
             text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
         },
         {
@@ -37,13 +36,23 @@ createApp({
   },
   computed: {
     currentImage() {
-      return this.imagesList[this.activeIdex].image;
+      return this.imagesList[this.activeIndex].image;
     },
     currentTitle() {
-      return this.imagesList[this.activeIdex].title;
+      return this.imagesList[this.activeIndex].title;
     },
     currentText() {
-      return this.imagesList[this.activeIdex].text;
+      return this.imagesList[this.activeIndex].text;
     }
+  },
+  methods:{
+    prevImage: function() {
+      this.activeIndex--
+    },
+   
+    nextImage: function() {
+      this.activeIndex++
+    }
+
   }
-}).mount('#app')
+}).mount('#app')  
